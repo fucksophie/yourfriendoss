@@ -1,8 +1,6 @@
 <p align="center">
 	<center>
-		<h1>
 			<img src="https://readme-typing-svg.herokuapp.com?color=FF9BD6&size=40&center=true&vCenter=true&width=250&height=56&lines=yourfriend">
-		</h1>
 	</center>
 </p>
 
