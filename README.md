@@ -1,7 +1,6 @@
 <p align="center">
 		<img src="https://readme-typing-svg.herokuapp.com?color=FF9BD6&size=40&center=true&vCenter=true&width=250&height=56&lines=yourfriend">
 </p>
-<hr>
 
 ## so you're developer yes?
 
@@ -14,8 +13,6 @@ this website should be entirely written in `nim` :D
 i am also trying to use c++.. please do not offer me c++ it's very hard for me to do
 
 ## i love bladee
-
-favorite bladee songs:
 
 ### hotel breakfast
 <a href="https://www.youtube.com/watch?v=dCxDI5wI10Q" title="bladee - hotel breakfast">
@@ -53,4 +50,4 @@ bladee - egobaby (Official Audio)">
 <img src="https://pbs.twimg.com/media/E3ygeDNVcAA-ND0?format=jpg&name=small" width="300">
 
 
-## fun fact, crappybar is a rodent..
+### fun fact, crappybar is a rodent..
