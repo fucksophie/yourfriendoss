@@ -32,7 +32,25 @@ bladee - egobaby (Official Audio)">
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=yourfriendoss&bg_color=000000&title_color=FF9BD6&hide_border=true&text_color=ffffff)
 
+## crappy bars
 
-#### Please do not give me any more flak, I am struggling   
+### turn around we're taking a group photo
+<img src="https://pbs.twimg.com/media/E6_hPvKVcAQhZKn?format=jpg&name=small" width="300">
 
-#### \- swedish artist "bladee" on the 2021 album The FOOL
+### food bowl crappy bar
+<img src="https://pbs.twimg.com/media/E5aanDDVIAYz_pU?format=jpg&name=small" width="300">
+
+### tetris
+<img src="https://pbs.twimg.com/media/E5VfoJTVIAQT63x?format=jpg&name=small" width="300">
+
+### give me
+<img src="https://pbs.twimg.com/media/E5EHdfMVUAAsEdL?format=jpg&name=small" width="300">
+
+### i am approching your location and every second you are not running i get closer
+<img src="https://pbs.twimg.com/media/E46jc74WEAAViFr?format=jpg&name=small" width="300">
+
+### cousins
+<img src="https://pbs.twimg.com/media/E3ygeDNVcAA-ND0?format=jpg&name=small" width="300">
+
+
+## fun fact, crappybar is a rodent..
