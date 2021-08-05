@@ -1,14 +1,14 @@
 import strutils, prologue, markdown
 
 proc index*(ctx: Context) {.async.} =
-  let file = readFile("../README.md")
+  let file = readFile("README.md")
   let md = markdown(file)
 
-  resp strutils.replace(readFile("index.html"), "%File%", md)
+  resp strutils.replace(readFile("website/index.html"), "%File%", md)
 
   
 proc style(ctx: Context) {.async.} =
-  await ctx.staticFileResponse("assets/style.css", "")
+  await ctx.staticFileResponse("website/assets/style.css", "")
 
 
 let settings = newSettings(
