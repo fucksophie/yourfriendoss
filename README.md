@@ -1,4 +1,4 @@
-![Title, scrolling yourfriend](https://readme-typing-svg.herokuapp.com?color=FF9BD6&size=40&width=250&height=56&lines=yourfriend)
+# yourfriend
 
 ## soo, what do you do?
 
