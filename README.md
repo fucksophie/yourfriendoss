@@ -27,7 +27,7 @@ bladee - egobaby (Official Audio)" class="img">
 
 ## stats
 
-![yourfriend's github stats](https://github-readme-stats.vercel.app/api?username=yourfriendoss&bg_color=000000&title_color=FF9BD6&hide_border=true&text_color=ffffff)
+![yourfriend's github stats](https://github-readme-stats-pi-lake.vercel.app/api?username=yourfriendoss&bg_color=000000&title_color=FF9BD6&hide_border=true&text_color=ffffff)
 
 ## crappy bars
 
