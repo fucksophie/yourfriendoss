@@ -1,0 +1,2 @@
+|title|snapchat
+snapchat is so fucking bad for actual talking lol, your messages dissapear somewhere? and like its so fucking merssy to do anyhthing in, i mean i can talk with my frieds but it hard to use smhb fuck snipchat ihate snipchat

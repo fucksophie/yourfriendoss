@@ -10,6 +10,8 @@ This website should be entirely written in `nim` :D
  
 I am also trying to use c++.. Please do not offer me c++ it's very hard for me to do..
 
+i am also beginning work on a blog! visit [yourfriend.lv/blog](https://yourfriend.lv/blog)!
+
 ## i love bladee
 
 ### hotel breakfast
