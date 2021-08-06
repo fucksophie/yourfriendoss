@@ -44,8 +44,6 @@ proc blog*(ctx: Context) {.async.} =
   
   postsTemplate = markdown(postsTemplate)
 
-  echo postsTemplate
-
   var index = readFile("website/templates/index.html")
 
   index = strutils.replace(index, "%Markdown%", postsTemplate)
@@ -76,7 +74,7 @@ proc style(ctx: Context) {.async.} =
 let settings = newSettings(
   address = "0.0.0.0",
   port = Port(20007),
-  debug = true,
+  debug = false,
   appName = "yourfriend's website"
 )
 
