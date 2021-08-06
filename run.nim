@@ -1,15 +1,16 @@
-import strutils, sequtils, os, prologue, markdown, times
+import std/strutils, std/sequtils, std/os, std/times, prologue
 
 import nre except toSeq
+import markdown except toSeq
 
 proc index*(ctx: Context) {.async.} =
   let file = readFile("README.md")
   let md = markdown(file)
 
-  resp strutils.replace(readFile("website/templates/index.html"), "%Markdown%", md)
+  resp replace(readFile("website/templates/index.html"), "%Markdown%", md)
 
 proc blog*(ctx: Context) {.async.} =
-  let posts = sequtils.toSeq(walkDir("website/posts/", relative=true))
+  let posts = toSeq(walkDir("website/posts/", relative=true))
 
   var postText = ""
 
@@ -18,23 +19,23 @@ proc blog*(ctx: Context) {.async.} =
 
     let title = post.match(nre.re("(?i)(?m)\\|title\\|(.*)$")).get.captures[0]
 
-    proc utcTzInfo(time: Time): ZonedTime =
+    proc europeTzInfo(time: Time): ZonedTime =
       ZonedTime(utcOffset: -3, isDst: true, time: time)
 
     let edited = getLastModificationTime("website/posts/" & path.path)
-                .inZone(zone = newTimezone("Europe/Riga", utcTzInfo, utcTzInfo))
+                .inZone(zone = newTimezone("Europe/Riga", europeTzInfo, europeTzInfo))
                 .format("yyyy-MM-dd HH:mm tt")
 
     let posted = getCreationTime("website/posts/" & path.path)
-                  .inZone(zone = newTimezone("Europe/Riga", utcTzInfo, utcTzInfo))
+                  .inZone(zone = newTimezone("Europe/Riga", europeTzInfo, europeTzInfo))
                   .format("yyyy-MM-dd HH:mm tt")
     
     var postTemplate = readFile("website/templates/postListing.md")
 
-    postTemplate = strutils.replace(postTemplate, "%title%", title)  
-    postTemplate = strutils.replace(postTemplate, "%creation%", posted)
-    postTemplate = strutils.replace(postTemplate, "%edited%", edited)
-    postTemplate = strutils.replace(postTemplate, "%url%", strutils.replace("/blog/post/" & path.path, " ", "_"))
+    postTemplate = replace(postTemplate, "%title%", title)  
+    postTemplate = replace(postTemplate, "%creation%", posted)
+    postTemplate = replace(postTemplate, "%edited%", edited)
+    postTemplate = replace(postTemplate, "%url%", strutils.replace("/blog/post/" & path.path, " ", "_"))
   
     postText = postText & postTemplate
 
@@ -55,15 +56,14 @@ proc posts(ctx: Context) {.async.} =
 
   var postTemplate = readFile("website/templates/post.md")
 
-  postTemplate = strutils.replace(postTemplate, "%title%", post.match(nre.re("(?i)(?m)\\|title\\|(.*)$")).get.captures[0])
-  
-  postTemplate = strutils.replace(postTemplate, "%content%", replace(post, nre.re("(?i)(?m)\\|title\\|(.*)$"), ""))
+  postTemplate = replace(postTemplate, "%title%", post.match(nre.re("(?i)(?m)\\|title\\|(.*)$")).get.captures[0])
+  postTemplate = replace(postTemplate, "%content%", replace(post, nre.re("(?i)(?m)\\|title\\|(.*)$"), ""))
 
   postTemplate = markdown(postTemplate)
 
   var index = readFile("website/templates/index.html")
   
-  index = strutils.replace(index, "%Markdown%", postTemplate)
+  index = replace(index, "%Markdown%", postTemplate)
   
   resp index
 
