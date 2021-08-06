@@ -1,95 +1,29 @@
-import  prologue
+import httpx
 
-from std/os import walkDir, getLastModificationTime, getCreationTime
-from std/times import ZonedTime, Time, inZone, newTimezone, format
-from std/sequtils import toSeq
-from std/strutils import replace
+import std/[os, strutils, options, asyncdispatch]
+import routes/[index, blog, post]
 
-import prologue/middlewares/staticfile
-
-import nre except toSeq
-import markdown except toSeq
-
-proc index*(ctx: Context) {.async.} =
-  let file = readFile("README.md")
-  let md = markdown(file)
-
-  resp replace(readFile("website/templates/index.html"), "%Markdown%", md)
-
-proc blog*(ctx: Context) {.async.} =
-  let posts = toSeq(walkDir("website/posts/", relative=true))
-
-  var postText = ""
-
-  for path in posts:
-    let post = readFile("website/posts/" & path.path)
-
-    let title = post.match(nre.re("(?i)(?m)\\|title\\|(.*)$")).get.captures[0]
-
-    proc europeTzInfo(time: Time): ZonedTime =
-      ZonedTime(utcOffset: -3, isDst: true, time: time)
-
-    let edited = getLastModificationTime("website/posts/" & path.path)
-                .inZone(zone = newTimezone("Europe/Riga", europeTzInfo, europeTzInfo))
-                .format("yyyy-MM-dd HH:mm tt")
-
-    let posted = getCreationTime("website/posts/" & path.path)
-                  .inZone(zone = newTimezone("Europe/Riga", europeTzInfo, europeTzInfo))
-                  .format("yyyy-MM-dd HH:mm tt")
+proc onRequest(req: Request): Future[void]=
+  if req.httpMethod == some(HttpGet):
+    case req.path.get()
     
-    var postTemplate = readFile("website/templates/postListing.md")
+    of "/":
+      index(req)
 
-    postTemplate = replace(postTemplate, "%title%", title)  
-    postTemplate = replace(postTemplate, "%creation%", posted)
-    postTemplate = replace(postTemplate, "%edited%", edited)
-    postTemplate = replace(postTemplate, "%url%", strutils.replace("/blog/post/" & path.path, " ", "_"))
-  
-    postText = postText & postTemplate
+    of "/blog":
+      blog(req)
+    
+    else:
+      let path = req.path.get()
 
-  var postsTemplate = readFile("website/templates/posts.md")
+      if startsWith(path, "/blog/post/"):
+        if fileExists("website/posts/" & split(path, "/blog/post/")[1]):
+          post(req, split(path, "/blog/post/")[1])
 
-  postsTemplate = strutils.replace(postsTemplate, "%posts%", postText)
-  
-  postsTemplate = markdown(postsTemplate)
+      if fileExists("website/assets" & path):
+        req.send(readFile("website/assets" & path))
 
-  var index = readFile("website/templates/index.html")
+      req.send(Http404)
 
-  index = strutils.replace(index, "%Markdown%", postsTemplate)
-  
-  resp index
-
-proc posts(ctx: Context) {.async.} =
-  let post = readFile("website/posts/" & strutils.replace(ctx.getPathParams("text"), "_", " "))
-
-  var postTemplate = readFile("website/templates/post.md")
-
-  postTemplate = replace(postTemplate, "%title%", post.match(nre.re("(?i)(?m)\\|title\\|(.*)$")).get.captures[0])
-  postTemplate = replace(postTemplate, "%content%", replace(post, nre.re("(?i)(?m)\\|title\\|(.*)$"), ""))
-
-  postTemplate = markdown(postTemplate)
-
-  var index = readFile("website/templates/index.html")
-  
-  index = replace(index, "%Markdown%", postTemplate)
-  
-  resp index
-
-
-let settings = newSettings(
-  address = "0.0.0.0",
-  port = Port(20007),
-  debug = false,
-  appName = "yourfriend's website"
-)
-
-var app = newApp(settings = settings)
-
-app.addRoute("/", index)
-
-app.use(staticFileMiddleware("website/assets"))
-
-app.addRoute("/blog", blog)
-app.addRoute("/blog/post/{text}", posts)
-
-echo " Running yourfriend's website! "
-app.run()
+echo "Running on port 20007. Binded to all interfaces."
+run(onRequest, initSettings(Port(20007), bindAddr = "0.0.0.0", numThreads = 2))

@@ -32,22 +32,22 @@ bladee - egobaby (Official Audio)" class="img">
 ## crappy bars
 
 ### turn around we're taking a group photo
-<img src="https://yourfriend.lv/website/assets/capybaras/1.jpg" width="300" class="img">
+<img src="https://yourfriend.lv/capybaras/1.jpg" width="300" class="img">
 
 ### food bowl crappy bar
-<img src="https://yourfriend.lv/website/assets/capybaras/2.jpg" width="300" class="img">
+<img src="https://yourfriend.lv/capybaras/2.jpg" width="300" class="img">
 
 ### tetris
-<img src="https://yourfriend.lv/website/assets/capybaras/3.jpg" width="300" class="img">
+<img src="https://yourfriend.lv/capybaras/3.jpg" width="300" class="img">
 
 ### give me
-<img src="https://yourfriend.lv/website/assets/capybaras/4.jpg" width="300" class="img">
+<img src="https://yourfriend.lv/capybaras/4.jpg" width="300" class="img">
 
 ### i am approching your location and every second you are not running i get closer
-<img src="https://yourfriend.lv/website/assets/capybaras/5.jpg" width="300" class="img">
+<img src="https://yourfriend.lv/capybaras/5.jpg" width="300" class="img">
 
 ### cousins
-<img src="https://yourfriend.lv/website/assets/capybaras/6.jpg" width="300" class="img">
+<img src="https://yourfriend.lv/capybaras/6.jpg" width="300" class="img">
 
 
 ### fun fact, crappybar is a rodent..
