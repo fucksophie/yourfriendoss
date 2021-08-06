@@ -1,5 +1,7 @@
 import std/strutils, std/sequtils, std/os, std/times, prologue
 
+import prologue/middlewares/staticfile
+
 import nre except toSeq
 import markdown except toSeq
 
@@ -67,9 +69,6 @@ proc posts(ctx: Context) {.async.} =
   
   resp index
 
-proc style(ctx: Context) {.async.} =
-  await ctx.staticFileResponse("website/assets/style.css", "")
-
 
 let settings = newSettings(
   address = "0.0.0.0",
@@ -82,7 +81,8 @@ var app = newApp(settings = settings)
 
 app.addRoute("/", index)
 
-app.addRoute("/style.css", style)
+app.use(staticFileMiddleware("website/assets"))
+
 app.addRoute("/blog", blog)
 app.addRoute("/blog/post/{text}", posts)
 
