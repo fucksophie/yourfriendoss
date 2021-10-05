@@ -1,2 +1,0 @@
-# Yourfriend's blog!
-%posts%

@@ -1,2 +1,0 @@
-|title|nim is a weird language..
-it feels like c.. but like python.. but like c++..  this place was written in nim and i really like it lol, this is my first nim project (certainly not the last either) i'm gonna be using it more just because it's so fucking easy to code in.. like to make a gui. i ltierally just nim install nim-imgui and now i can make a imgui gui.. i've not tried manipulating memory yet (gamehacking), but I'm gonna try taht soon, cause there's native windows API's.. such fun lang..
