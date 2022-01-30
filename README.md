@@ -1,7 +1,7 @@
 # yourfriend
 
 
-# cons
+## cons
 - hates wasm and assembly
 - js is fart use ts 😸
 - absolutely DOES NOT understand css positioning
@@ -9,8 +9,8 @@
 - hates irc
 - loves discord 😠
 
-# pros
+## pros
 - loves radio
 - deno developer ts fan
 - switching from node to deno on new projects
-- loves horrifying music (bladee)
+- loves horrifying music (bladee and sematary)
