@@ -1,13 +1,16 @@
 # yourfriend
 
-## soo, what do you do?
 
-I'm a developer!
-  
-I specialize in js, python and java.  
-I'm going to try to learn `nim` in the next ~month.   
-This website should be entirely written in `nim` :D  
- 
-I am also trying to use c++.. Please do not offer me c++ it's very hard for me to do..
+# cons
+- hates wasm and assembly
+- js is fart use ts 😸
+- absolutely DOES NOT understand css positioning
+- tried react once actually cried
+- hates irc
+- loves discord 😠
 
-i am also beginning work on a blog! visit [yourfriend.lv/blog](https://yourfriend.lv/blog)!
+# pros
+- loves radio
+- deno developer ts fan
+- switching from node to deno on new projects
+- loves horrifying music (bladee)
