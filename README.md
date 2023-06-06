@@ -1,1 +1,3 @@
-ALL OF THE THINGS HERE POSTED WERE PURE LIES
+hmu at friend@141.lv if you wanna make a cool readme for me
+
+(i can't bother)
