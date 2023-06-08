@@ -3,8 +3,8 @@ hmu at friend@141.lv if you wanna make a cool readme for me
 (i can't bother)  
 (for more info see https://3.141.lv)  
 
-my pronouns are any but i'm most fine with she/her  
-i'm from **57°18'43.6"N 25°16'24.5"E**
+**gender**: am genderfluid and use any pronouns but i am most fine with she/her  
+**self dox**: i am from **57°18'43.6"N 25°16'24.5"E**, shorter would be Cesis, Latvia  
 
 **langs**: TS, JS, react(tsx), c# and other misc garbage i know only a bit of such as C++, Lua and C  
 **games**: i play games rarely most you'll see me doing is minecraft and random steam games  
